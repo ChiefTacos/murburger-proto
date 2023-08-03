@@ -13,7 +13,7 @@ import * as THREE from "three";
 export function Office(props) {
   const { section } = props;
   const { nodes, materials } = useGLTF("models/scene.gltf");
-  const texture = useTexture("textures/bigBakeRound05MAX.jpg");
+  const texture = useTexture("textures/bigBakeRound0580.jpg");
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
 

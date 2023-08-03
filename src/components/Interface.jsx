@@ -329,7 +329,7 @@ const ContactSection = () => {
       {/* Fourth Section */}
       <div className="mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
         {/* LoadScript will load the required Google Maps scripts */}
-      <LoadScript googleMapsApiKey="AIzaSyDhiRsW49CK2_biPFw9jEKalDuowFXt0j0">
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         {/* Embed the Google Map */}
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
