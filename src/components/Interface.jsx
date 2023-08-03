@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { currentProjectAtom, projects } from "./Projects";
+import { useAtom } from "jotai";
+
 
 const Section = (props) => {
-  const { children } = props;
+  const { children, mobileTop } = props;
 
   return (
     <motion.section
-      className={`
-  h-screen w-screen p-8 max-w-screen-2xl mx-auto
-  flex flex-col items-start justify-center
-  `}
+    className={`
+    h-screen w-screen p-8 max-w-screen-2xl mx-auto
+    flex flex-col items-start
+    ${mobileTop ? "justify-start md:justify-center" : "justify-center"}
+    `}
       initial={{
         opacity: 0,
         y: 50,
@@ -28,28 +33,27 @@ const Section = (props) => {
 };
 
 export const Interface = () => {
+
   return (
     <div className="flex flex-col items-center w-screen">
       <AboutSection />
       <SkillsSection />
-      <Section>
-        <h1>Projects</h1>
-      </Section>
+      <ProjectsSection />
       <ContactSection />
     </div>
   );
 };
-
 const AboutSection = () => {
+
+
   return (
-    <Section>
-      <h1 className="text-6xl font-extrabold leading-snug">
-        Hi, I'm
-        <br />
-        <span className="bg-white px-1 italic">Wawa Sensei</span>
+    <Section mobileTop>
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-snug tracking-wider mt-8 mb-4 md:mt-0">
+        <span className="bg-white px-1 italic tracking-tight">MURBURGER</span>
       </h1>
-      <motion.p
-        className="text-lg text-gray-600 mt-4"
+    
+          <motion.p
+        className="text-lg text-gray-700 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -63,13 +67,12 @@ const AboutSection = () => {
           delay: 1.5,
         }}
       >
-        I make YouTube videos to help developers
-        <br />
-        learn how to build 3D apps
-      </motion.p>
+Fresh 100% USA Grade A Beef          <br />
+Made with ❤️      </motion.p>
       <motion.button
+        onClick={console.log("buttonclicked")}
         className={`bg-indigo-600 text-white py-4 px-8 
-      rounded-lg font-bold text-lg mt-16`}
+      rounded-lg font-bold text-lg mt-4 md:mt-16`}
         initial={{
           opacity: 0,
           y: 25,
@@ -83,57 +86,57 @@ const AboutSection = () => {
           delay: 2,
         }}
       >
-        Contact me
+        Contact us
       </motion.button>
     </Section>
   );
 };
-
 const skills = [
   {
-    title: "Threejs / React Three Fiber",
-    level: 80,
+    title: "MondayㅤㅤㅤㅤㅤCLOSED",
+    level: 0,
   },
   {
-    title: "React / React Native",
-    level: 90,
+    title: "TuesdayㅤㅤㅤㅤㅤCLOSED",
+    level: 0,
   },
   {
-    title: "Nodejs",
-    level: 90,
+    title: "Wednesday ㅤ ㅤ3pm-9pm",
+    level: 49,
   },
   {
-    title: "Typescript",
-    level: 60,
+    title: "Thursday ㅤ ㅤㅤ3pm-9pm",
+    level: 49,
   },
   {
-    title: "3D Modeling",
-    level: 40,
+    title: "Fridayㅤ ㅤ ㅤㅤ3pm-10pm",
+    level: 54,
   },
 ];
 const languages = [
   {
-    title: "🇫🇷 French",
-    level: 100,
+    title: "Saturday ㅤ ㅤ10am-10pm",
+    level:71,
   },
   {
-    title: "🇺🇸 English",
-    level: 80,
+    title: "Sunday ㅤ ㅤㅤㅤ9am-9pm",
+    level: 64,
   },
-  {
-    title: "🇯🇵 Japanese",
-    level: 20,
-  },
+  
 ];
 
 const SkillsSection = () => {
   return (
     <Section>
       <motion.div whileInView={"visible"}>
-        <h2 className="text-5xl font-bold">Skills</h2>
-        <div className=" mt-8 space-y-4">
+      {/* <h1 className="text-3xl md:text-5xl leading-4	 font-bold lg:mb-8 ml-3 pt-0 tracking-tighter text-left	">Official Hours</h1> */}
+      <div className="flex flex-wrap justify-between">
+      <div className="w-full lg:w-1/2 text-center md:text-left p-0 lg:p-1 md:p-3">
+
+        <h2 className="lg:text-5xl md:text-3xl text-3xl font-bold leading-4 ml-0.5 tracking-wider">Weekdays</h2>
+        <div className=" mt-8 mb-0 space-y-4">
           {skills.map((skill, index) => (
-            <div className="w-64" key={index}>
+            <div className="w-full pr-4 md:pr-0 md:w-64" key={index}>
               <motion.h3
                 className="text-xl font-bold text-gray-800"
                 initial={{
@@ -152,9 +155,9 @@ const SkillsSection = () => {
                 {skill.title}
               </motion.h3>
               <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                <motion.div
+                <motion.div 
                   className="h-full bg-indigo-500 rounded-full "
-                  style={{ width: `${skill.level}%` }}
+                  style={{ width: `${skill.level}%` , margin: "0 0 0 41%" }}
                   initial={{
                     scaleX: 0,
                     originX: 0,
@@ -172,12 +175,15 @@ const SkillsSection = () => {
               </div>
             </div>
           ))}
+          </div>
         </div>
-        <div>
-          <h2 className="text-5xl font-bold mt-10">Languages</h2>
-          <div className=" mt-8 space-y-4">
+
+        <div className="w-full lg:w-1/2 lg:pl-4 text-center md:text-left lg:pr-12 mt-0 md:mt-2">
+          
+          <h2 className="lg:text-5xl  text-3xl md:text-3xl font-bold md:mt-6 mt-5  lg:ml-0.5 tracking-wider text-gray">Weekends</h2>
+          <div className=" mt-8 md:mt-8 space-y-4">
             {languages.map((lng, index) => (
-              <div className="w-64" key={index}>
+              <div className="w-full pr-4 md:pr-0 md:w-64" key={index}>
                 <motion.h3
                   className="text-xl font-bold text-gray-800"
                   initial={{
@@ -198,8 +204,14 @@ const SkillsSection = () => {
                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                   <motion.div
                     className="h-full bg-indigo-500 rounded-full "
-                    style={{ width: `${lng.level}%` }}
-                    initial={{
+                    style={{
+                      width: `${lng.level}%`,
+                      
+
+                      margin: `0 0 0 ${0 + lng.level / 3}%` ,
+                      // overflow:"hidden",
+                    }}
+                      initial={{
                       scaleX: 0,
                       originX: 0,
                     }}
@@ -216,56 +228,121 @@ const SkillsSection = () => {
                 </div>
               </div>
             ))}
+
           </div>
+          <h1 className="text-6xl pt-2 m-1.5 font-medium	text-center">🍽️</h1>
+          <p className="text-1xl pt-2 font-medium	">brunch served from 9am-12pm on Sundays!</p>
         </div>
+
+      </div>
+
+
       </motion.div>
     </Section>
   );
 };
+const ProjectsSection = () => {
 
-const ContactSection = () => {
+  const [currentProject, setCurrentProject] = useAtom(currentProjectAtom);
+  const nextProject = () => {
+    setCurrentProject((currentProject + 1) % projects.length)
+  }
+  const previousProject = () => {
+    setCurrentProject((currentProject - 1 + projects.length) % projects.length)
+  }
+ 
   return (
     <Section>
-      <h2 className="text-5xl font-bold">Contact me</h2>
-      <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
-        <form>
-          <label for="name" className="font-medium text-gray-900 block mb-1">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
-          />
-          <label
-            for="email"
-            className="font-medium text-gray-900 block mb-1 mt-8"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
-          />
-          <label
-            for="email"
-            className="font-medium text-gray-900 block mb-1 mt-8"
-          >
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
-          />
-          <button className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
-            Submit
-          </button>
-        </form>
+  <div className="flex flex-col w-full h-full items-center justify-end mb-12 pointer-events-auto">
+    <div className="flex gap-8 items-center ">
+      <button
+        className="hover:text-indigo-600 transition-colors"
+        onClick={previousProject}
+      >
+        ← Previous
+      </button>
+      <h2 className="text-5xl font-bold text-center p-0 m-0">Menu Items</h2>
+      <button
+        className="hover:text-indigo-600 transition-colors"
+        onClick={nextProject}
+      >
+        → Next             
+
+      </button>
+    </div>
+    
+  </div>
+</Section>
+
+  )
+}
+const ContactSection = () => {
+  const mapContainerStyle = {
+    width: "100%",
+    height: "350px", // Set the desired height of the map
+  };
+  const center = {
+    lat: 42.450499, 
+    lng: -88.128882, 
+  };
+  
+  const zoom = 15;
+  // return (
+  //   <section className=" md:flex lg:justify-between items-center">
+  //   {/* First Div */}
+  //   <div className="md:w-1/2 p-4 mt-5 text-center">
+  //     <h1 className="text-3xl font-bold mb-2  mt-20 md:mt-0 ">First Div Heading</h1>
+  //     <p className="text-lg">Content for the first div goes here...</p>
+  //   </div>
+
+  //   {/* Second Div */}
+ 
+  // </section>
+
+  // );
+  return (
+    <div id="contact" className="flex flex-wrap items-center">
+      {/* First Section */}
+      <div className="w-full md:w-1/2 p-4 mt-8 md:mt-16">
+        {/* Content for the first section goes here... */}
+        <h1 className="text-4xl font-bold mb-2">Contact Us</h1>
       </div>
-    </Section>
+
+      {/* Second Section */}
+      <div className="w-full md:w-1/2 p-4 mt-8 md:mt-16">
+        {/* Content for the first section goes here... */}
+        <h2 className="text-xl font-bold mt-2">Phone Number:</h2>
+        <h2 className="text-xl font-bold mt-0">(262) 230 5182</h2>
+        
+      </div>
+
+
+      {/* Third Section */}
+      <div className="w-full md:w-1/2 p-4">
+        {/* Content for the third section goes here... */}
+        <h2 className="text-xl font-bold mt-2">Address:</h2>
+        <h2 className="text-xl font-bold mt-0">7120 N Sheridan Rd, Chicago, IL 60626</h2>
+        
+
+      </div>
+
+      {/* Fourth Section */}
+      <div className="mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
+        {/* LoadScript will load the required Google Maps scripts */}
+      <LoadScript googleMapsApiKey="AIzaSyDhiRsW49CK2_biPFw9jEKalDuowFXt0j0">
+        {/* Embed the Google Map */}
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={center}
+          zoom={zoom}
+        >
+          {/* Add any additional components (markers, etc.) as needed */}
+          {/* ... */}
+        </GoogleMap>
+      </LoadScript>
+        
+      </div>
+    </div>
   );
+
 };
