@@ -41,16 +41,29 @@ export const Menu = (props) => {
           {/* <h2 className="mt-0 p-0 italic overline decoration-dashed decoration-1 ">NAVIGATION</h2> */}
 
         </div>
+
         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <div className="flex-1 flex items-start justify-center flex-col">
-          <div>
-            <p className="text-left ml-5 text-2xl ">Address:</p>
-            <h3 className="text-center">913 Cecil Street</h3>
-          </div>
-        <a href="https://www.sirmur.com" target="_blank" className="text-center">
-          <h2>Click or Call to order our delicious Homemade food!</h2>
+        <div className="mt-0">
+
+        </div>
+        <div className="justify-center text-center pt-2 mb-1">
+<a href="http://sirmur.com"  target="_blank" >
+<h2 className="p-0 m-0 font-bold text-xl">Order NOW for pickup</h2>
+        <MenuButton className="p-0 m-0" label="🍽️" />
         </a>
-      </div>
+        </div>
+        <div className="justify-center text-center flex items-center flex-col mb-1">
+  <p className="text-2xl"></p>
+  <h3>895 N Sheridan Ave, Chicago IL</h3>
+  
+</div>
+       <div className="mb-0 pb-5 text-center"> 
+        <a href="tel:+12622305182" target="_blank" className="font-bold">
+          <h2>+1 (262)-230-5182</h2>
+          <MenuButton label="📞" />
+
+        </a>
+       </div>
       </div>
     </>
   );

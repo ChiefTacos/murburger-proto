@@ -301,7 +301,7 @@ const ContactSection = () => {
 
   // );
   return (
-    <div id="contact" className="flex flex-wrap items-center">
+    <div id="contact" className="flex flex-wrap items-center ">
       {/* First Section */}
       <div className="w-full md:w-1/2 p-4 mt-8 md:mt-16">
         {/* Content for the first section goes here... */}
