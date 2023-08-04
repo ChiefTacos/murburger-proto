@@ -95,11 +95,11 @@ Made with ❤️      </motion.p>
 };
 const skills = [
   {
-    title: "MondayㅤㅤㅤㅤㅤCLOSED",
+    title: "Mondayㅤ ㅤ ㅤ ㅤCLOSED",
     level: 0,
   },
   {
-    title: "TuesdayㅤㅤㅤㅤㅤCLOSED",
+    title: "Tuesdayㅤ ㅤ ㅤ ㅤCLOSED",
     level: 0,
   },
   {
