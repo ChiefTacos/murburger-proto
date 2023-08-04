@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { currentProjectAtom, projects } from "./Projects";
 import { useAtom } from "jotai";
+import burgerLogo from "/img/burgerLogo.png"; // Replace with the correct path to your logo image
 
 
 const Section = (props) => {
@@ -48,12 +49,12 @@ const AboutSection = () => {
 
   return (
     <Section mobileTop>
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-snug tracking-wider mt-8 mb-4 md:mt-0">
+      <h1 className="text-4xl md:self-start self-center text-center md:text-left md:text-6xl font-extrabold leading-snug tracking-wider mt-8 mb-4 md:mt-0 ">
         <span className="bg-white px-1 italic tracking-tight">MURBURGER</span>
       </h1>
-    
+    <div className=" md:self-start self-center text-center md:text-left">
           <motion.p
-        className="text-lg text-gray-700 mt-4"
+        className="text-lg  rounded-lg	p-2 text-white bg-indigo-600 mt-4 font-bold"
         initial={{
           opacity: 0,
           y: 25,
@@ -71,7 +72,7 @@ Fresh 100% USA Grade A Beef          <br />
 Made with ❤️      </motion.p>
       <motion.button
         onClick={console.log("buttonclicked")}
-        className={`bg-indigo-600 text-white py-4 px-8 
+        className={`bg-red-600 text-white py-4 px-8 
       rounded-lg font-bold text-lg mt-4 md:mt-16`}
         initial={{
           opacity: 0,
@@ -86,8 +87,9 @@ Made with ❤️      </motion.p>
           delay: 2,
         }}
       >
-        Contact us
+        ORDER NOW
       </motion.button>
+      </div>
     </Section>
   );
 };
@@ -129,8 +131,9 @@ const SkillsSection = () => {
   return (
     <Section>
       <motion.div whileInView={"visible"}>
+      
       {/* <h1 className="text-3xl md:text-5xl leading-4	 font-bold lg:mb-8 ml-3 pt-0 tracking-tighter text-left	">Official Hours</h1> */}
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-wrap justify-between text-white">
       <div className="w-full lg:w-1/2 text-center md:text-left p-0 lg:p-1 md:p-3">
 
         <h2 className="lg:text-5xl md:text-3xl text-3xl font-bold leading-4 ml-0.5 tracking-wider">Weekdays</h2>
@@ -138,7 +141,7 @@ const SkillsSection = () => {
           {skills.map((skill, index) => (
             <div className="w-full pr-4 md:pr-0 md:w-64" key={index}>
               <motion.h3
-                className="text-xl font-bold text-gray-800"
+                className="text-xl font-bold text-black"
                 initial={{
                   opacity: 0,
                 }}
@@ -180,7 +183,7 @@ const SkillsSection = () => {
 
         <div className="w-full lg:w-1/2 lg:pl-4 text-center md:text-left lg:pr-12 mt-0 md:mt-2">
           
-          <h2 className="lg:text-5xl  text-3xl md:text-3xl font-bold md:mt-6 mt-5  lg:ml-0.5 tracking-wider text-gray">Weekends</h2>
+          <h2 className="lg:text-5xl  text-3xl md:text-3xl font-bold md:mt-6 mt-5  lg:ml-0.5 tracking-wider text-white">Weekends</h2>
           <div className=" mt-8 md:mt-8 space-y-4">
             {languages.map((lng, index) => (
               <div className="w-full pr-4 md:pr-0 md:w-64" key={index}>
@@ -253,7 +256,22 @@ const ProjectsSection = () => {
  
   return (
     <Section>
+       <motion.div
+        initial={{ translateY: "-20%", translateX: "0%", opacity: 0 }}
+        animate={{ translateY: "-20%", translateX: "0%", opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="flex flex-col w-full h-full items-center justify-end mb-12 pointer-events-auto"
+      >
+       <img
+          src={burgerLogo}
+          alt="Burger Logo"
+          className="md:w-72 md:h-72 w-48 h-48  absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-50"
+
+          // className=" md:w-72 md:h-72 w-48 h-48  absolute top-1/2 left-1/2 transform translate-y-72 -translate-x-1/2  md:translate-y-48 z-50"
+        />
+      </motion.div>
   <div className="flex flex-col w-full h-full items-center justify-end mb-12 pointer-events-auto">
+ 
     <div className="flex gap-8 items-center ">
       <button
         className="hover:text-indigo-600 transition-colors"
@@ -301,18 +319,18 @@ const ContactSection = () => {
 
   // );
   return (
-    <div id="contact" className="flex flex-wrap items-center ">
+    <div id="contact" className="flex flex-wrap items-center justify-center">
       {/* First Section */}
-      <div className="w-full md:w-1/2 p-4 mt-8 md:mt-16">
+      <div className="w-full md:w-1/2 p-0 mt-8 md:mt-16">
         {/* Content for the first section goes here... */}
-        <h1 className="text-4xl font-bold mb-2">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-2 text-center rounded-md p-2 bg-white bg-opacity-80 tracking-wider	inline-block ">Contact Us</h1>
       </div>
 
       {/* Second Section */}
-      <div className="w-full md:w-1/2 p-4 mt-8 md:mt-16">
+      <div className="w-full md:w-1/2 p-4 mt-0 md:mt-16 ">
         {/* Content for the first section goes here... */}
-        <h2 className="text-xl font-bold mt-2">Phone Number:</h2>
-        <h2 className="text-xl font-bold mt-0">(262) 230 5182</h2>
+        <h2 className="text-xl font-bold mt-2">Address:</h2>
+        <h2 className="text-xl font-bold mt-0">7120 N Sheridan Rd, Chicago, IL 60626</h2>
         
       </div>
 
@@ -320,16 +338,18 @@ const ContactSection = () => {
       {/* Third Section */}
       <div className="w-full md:w-1/2 p-4">
         {/* Content for the third section goes here... */}
-        <h2 className="text-xl font-bold mt-2">Address:</h2>
-        <h2 className="text-xl font-bold mt-0">7120 N Sheridan Rd, Chicago, IL 60626</h2>
+        <h2 className="text-xl font-bold mt-2">Phone Number:</h2>
+        <h2 className="text-xl font-bold mt-0">(262) 230 5182</h2>
         
 
       </div>
 
       {/* Fourth Section */}
-      <div className="mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
+      <div className="mt-8 p-6 rounded-md bg-white bg-opacity-50 w-96 md:w-6/12		 max-w-full">
         {/* LoadScript will load the required Google Maps scripts */}
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      {/* <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}> */}
+      <LoadScript googleMapsApiKey={"AIzaSyAW2BFkGEy8AQ9AvRVoYYirLbcffNx85Po"}>
+
         {/* Embed the Google Map */}
         <GoogleMap
           mapContainerStyle={mapContainerStyle}

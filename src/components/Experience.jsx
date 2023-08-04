@@ -19,7 +19,7 @@ export const Experience = (props) => {
   const data = useScroll();
 
   const isMobile = window.innerWidth < 768;
-  const responsiveratio = viewport.width / 12;
+  // const responsiveratio = viewport.width / 12;
   
   const [section, setSection] = useState(0);
   
@@ -28,9 +28,8 @@ export const Experience = (props) => {
   const sectionAnimations = {
     0: "Hip Hop Dancing",
     1: "Sitting",
-    2: "Pointing",
-    3: "Hip Hop Dancing",
-    
+    2: "Hip Hop Dancing",
+    3:"Hip Hop Dancing",
     default: "Falling",
 
   };
@@ -118,11 +117,11 @@ if (curSection > 3) {
           rotateZ: 0,
         },
         3: {
-          x: 0.3,
+          x: isMobile? 0 : -0.4,
           y: -viewport.height * 3 + 1,
           z: 8.5,
-          rotateX: 0,
-          rotateY: -Math.PI / 7,
+          rotateX: -0.2,
+          rotateY: Math.PI / 8,
           rotateZ: 0,
         },
       }}
@@ -203,11 +202,11 @@ if (curSection > 3) {
           rotateY: 0,
           rotateZ: 0,
         },
-        3: {
-          rotateX: 0,
-          rotateY: 0,
-          rotateZ: 0,
-        },
+        // 3: {
+        //   rotateX: 0,
+        //   rotateY: 0,
+        //   rotateZ: 0,
+        // },
       }}
       >
         <Office section={section} />
