@@ -126,7 +126,7 @@ if (curSection > 3) {
         },
       }}
       >
-      <Avatar animation={sectionAnimations[section]  || sectionAnimations.default} wireframe={section === 3}    />
+      <Avatar animation={sectionAnimations[section]  || sectionAnimations.default} wireframe={section === 0}    />
       </motion.group>
       <ambientLight intensity={1} />
       <motion.group
