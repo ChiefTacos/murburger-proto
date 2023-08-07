@@ -27,14 +27,15 @@ export const Menu = (props) => {
         />
       </button>
       <div
-        className={`z-10 fixed top-0 right-0 bottom-0 transition-all overflow-hidden flex flex-col ${
+        className={`z-10 fixed top-0 right-0 bottom-0 transition-all overflow-hidden flex bg-white flex-col ${
           menuOpened ? "w-80" : "w-0"
         }`}
-        style={{
-          backgroundColor: "#FFDEE9",
-          backgroundImage: "linear-gradient(0deg, #FFDEE9 0%, #c3dbff 100%)",
+        // style={{
+
+        //   backgroundColor: "#FFDEE9",
+        //   backgroundImage: "linear-gradient(0deg, #FFDEE9 0%, #c3dbff 100%)",
           
-        }}
+        // }}
       >
         <div className="flex-1 flex items-start justify-center flex-col gap-12 md:gap-10 mt-10 p-12 md:mt-10 md:p-10">
 

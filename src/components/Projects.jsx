@@ -66,7 +66,7 @@ const Project = (props) => {
                 <planeGeometry args={[2.4, 2.2]} />
                 <meshBasicMaterial color="black" transparent opacity={0.4} />
             </mesh>
-            <Image scale={[2.5, 1.8, 1.5]} url={project.image} toneMapped={false} position-y={0.6} />
+            <Image scale={[2.4, 1.7, 1.5]} url={project.image} toneMapped={false} position-y={0.6} />
             <Text maxWidth={2} anchorX={"left"} anchorY={"top"} fontSize={0.2} position={[-1, -0.4, 0]}>
             {project.title.toUpperCase()}
             </Text>

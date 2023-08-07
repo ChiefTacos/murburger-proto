@@ -152,3 +152,6 @@ export function Avatar(props) {
 }
 
 useGLTF.preload("models/busterBrown.glb");
+useFBX.preload("animations/Hip Hop Dancing.fbx");
+useFBX.preload("animations/Floating.fbx");
+useFBX.preload("animations/Sitting Idle.fbx");

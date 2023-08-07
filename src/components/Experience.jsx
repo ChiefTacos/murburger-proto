@@ -81,7 +81,7 @@ if (curSection > 3) {
       position={[0.34, 0.39, 4.32]} 
       rotation={[-3.141592653589793, 3.42, -3.141592653589793]} 
       animate={"" + section}
-      scale={[0.8, 0.8, 0.8]}
+      scale={[0, 0, 0]}
       transition={{
         duration: 0.6,
       }}
@@ -89,9 +89,6 @@ if (curSection > 3) {
 
       variants={{
         0: {
-          scaleX: 0.01,
-          scaleY: 0.01,
-          scaleZ: 0.01,
           rotateX: 0,
           rotateY: 0,
           rotateZ: 0,
@@ -103,12 +100,11 @@ if (curSection > 3) {
           rotateX: 0,
           rotateY: 0,
           rotateZ: 0,
+          scaleX: 0.8,
+          scaleY: 0.8,
+          scaleZ: 0.8,
         },
         2: {
-          
-          scaleX: 0.01,
-          scaleY: 0.01,
-          scaleZ: 0.01,
           x: 2,
           y: -viewport.height - 10.5,
           z: 3,
@@ -123,6 +119,9 @@ if (curSection > 3) {
           rotateX: -0.2,
           rotateY: Math.PI / 8,
           rotateZ: 0,
+          scaleX: 0.8,
+          scaleY: 0.8,
+          scaleZ: 0.8,
         },
       }}
       >
