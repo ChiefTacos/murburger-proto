@@ -348,7 +348,7 @@ const ContactSection = () => {
       <div className="mt-8 p-6 rounded-md bg-white bg-opacity-50 w-96 md:w-6/12		 max-w-full">
         {/* LoadScript will load the required Google Maps scripts */}
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-      {/* <LoadScript googleMapsApiKey={"AIzaSyBSVfaXZX_nj6Nc3qKlFQ3Q7P7paqvLDeQ"}> */}
+      {/* <LoadScript googleMapsApiKey={""}> */}
 
         {/* Embed the Google Map */}
         <GoogleMap
