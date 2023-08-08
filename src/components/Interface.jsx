@@ -260,7 +260,7 @@ const ProjectsSection = () => {
         initial={{ translateY: "-13%", translateX: "0%", opacity: 0 }}
         animate={{ translateY: "-13%", translateX: "0%", opacity: 1 }}
         transition={{ duration: 2}}
-        className="flex flex-col w-full h-full items-center justify-center mb-12 pointer-events-auto"
+        className="flex flex-col w-full h-full items-center justify-center mb-12 pointer-events-auto z-0"
       >
 <motion.div
         animate={{  rotate: [0, 360]     }}
@@ -474,7 +474,7 @@ m79 -333 c76 -94 73 -152 -9 -191 -35 -17 -38 -17 -70 0 -48 26 -103 113 -103
               <div className="w-full md:w-auto">
 
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-           className="w-full h-auto md:w-100 md:h-100"
+          className="w-full h-auto md:w-40 md:h-40"
            viewBox="0 0 300.000000 300.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -503,7 +503,7 @@ fill="#000000" stroke="none">
         <div className="w-full md:w-auto">
 
         <svg fill="#000000" 
-                 className="w-full h-auto md:w-100 md:h-100"
+                 className="w-full h-auto md:w-40 md:h-40"
         version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 330 330" xml:space="preserve">
 <g>
