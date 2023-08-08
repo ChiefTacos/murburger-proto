@@ -474,7 +474,7 @@ m79 -333 c76 -94 73 -152 -9 -191 -35 -17 -38 -17 -70 0 -48 26 -103 113 -103
               <div className="w-full md:w-auto">
 
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-           className="w-full h-auto md:w-150 md:h-150"
+           className="w-full h-auto md:w-100 md:h-100"
            viewBox="0 0 300.000000 300.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -503,7 +503,7 @@ fill="#000000" stroke="none">
         <div className="w-full md:w-auto">
 
         <svg fill="#000000" 
-                 className="w-full h-auto md:w-150 md:h-150"
+                 className="w-full h-auto md:w-100 md:h-100"
         version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 330 330" xml:space="preserve">
 <g>
